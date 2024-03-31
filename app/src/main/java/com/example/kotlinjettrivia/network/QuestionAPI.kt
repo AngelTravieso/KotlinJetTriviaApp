@@ -5,7 +5,7 @@ import retrofit2.http.GET
 import javax.inject.Singleton
 
 @Singleton
-interface QuestionAPI {
+interface QuestionAPI { // QuestionDao, it's a DAO
 
     @GET("/world.json")
     suspend fun getAllQuestions(): Question
