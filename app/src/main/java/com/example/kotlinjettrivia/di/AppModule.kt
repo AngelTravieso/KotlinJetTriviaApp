@@ -1,6 +1,7 @@
 package com.example.kotlinjettrivia.di
 
 import com.example.kotlinjettrivia.network.QuestionAPI
+import com.example.kotlinjettrivia.repository.QuestionRepository
 import com.example.kotlinjettrivia.util.Constants
 import com.google.gson.GsonBuilder
 import com.google.gson.internal.GsonBuildConfig
@@ -15,6 +16,10 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
+    @Singleton
+    @Provides
+    fun provideQuestionRepository(api: QuestionAPI) = QuestionRepository(api)
 
     @Singleton
     @Provides
